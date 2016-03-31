@@ -1,3 +1,158 @@
-body {
-    background-image: url('congruent_outline.png');
+body { color: #eee; }
+
+/* #navigation */
+
+header {
+    position:fixed; left:0px; top:0px; right:0px;
+
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    height:120px;
+    z-index:999;
+
+    list-style-type: none;
+    padding: 0px 8% 0px 0px;
+    margin: 0;
+    overflow: hidden;
+    background-color: #111;
+}
+
+header img {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s ease;
+
+    width: 120px;
+    height: 120px;
+    float: left;
+}
+
+header a {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    float:right;
+    display: block;
+    color: white;
+    text-align: center;
+    margin-top: 35px;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-shadow: 0px 2px 3px #555;
+    font-size: 22px;
+}
+
+/* Change the link color to #111 (black) on hover */
+header a:hover {
+    background-color:  #00e673;
+    color: black;
+}
+
+header.shrink {
+    height: 50px;
+    padding-right: 40%;
+}
+
+header.shrink a {
+   margin-top: 3px;
+   font-size: 18px;
+}
+
+header.shrink img {
+    width: 0px;
+    height: 0px;
+    opacity: 0.0;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+/* #actual_content */
+
+#wrapper {
+    position:relative;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#content_wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+#bglayer {
+    background-image: url('img/congruent_outline.png');
+    background-repeat: repeat;
+    z-index: -100;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#actual_content {
+    margin-top: 120px;
+    z-index: 999;
+    width: 100%;
+
+    height: auto;
+    overflow-y: hidden;
+}
+
+#actual_content h1 {
+    text-align: center;
+    font-size: 80px;
+    padding-top: 30px;
+    margin: 0;
+}
+
+#actual_content h3 {
+    text-align: center;
+    padding-top: 10px;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+/* #parallax */
+
+.parallax {
+    -webkit-perspective: 300px;
+    perspective: 300px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    position: fixed;
+    top:0px;
+    left:0px;
+}
+
+.parallaxlayer {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.layerback {
+    transform: translateZ(-1200px)  scale(6);
+    -webkit-transform: translateZ(-1200px) scale(6);
+    bottom:0;
+}
+
+.layerfront {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
